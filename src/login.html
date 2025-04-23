@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recetas - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Añadir Font Awesome para las estrellas -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                light: "#E9D5FF", // Morado clarito (fondo página)
+                medium: "#8B5CF6", // Morado medio (header/footer)
+                dark: "#7C3AED", // Morado más oscuro (hover)
+              },
+              accent: "#F59E0B", // Naranja 
+              text: "#1F2937", // Texto oscuro
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      /* Estilos para el menú móvil */
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .mobile-menu.open {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body class="bg-purple-light text-text min-h-screen">
+
+    <!-- Header morado medio -->
+    <header class="py-4 px-8 bg-purple-medium text-white shadow-lg">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="#" class="hover:opacity-90 transition-opacity">
+          <img src="/assets/images/logo.PNG" alt="Logo" class="h-20 md:h-24" />
+        </a>
+
+        <!-- Botón del menú hamburguesa (solo visible en móvil) -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de navegación principal (oculto en móvil) -->
+        <nav class="hidden md:block">
+          <ul class="flex items-center space-x-8">
+            <li><a href="./inicio.html" class="font-semibold hover:text-purple-light transition-colors">INICIO</a></li>
+            <li>
+              <a
+                href="./categorías_recetas.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >RECETAS</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contacto.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >CONTACTO</a
+              >
+            </li>
+            <li>
+              <a
+                href="./buscar.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >BUSCAR</a
+              >
+            </li>
+            <li class="flex items-center space-x-4">
+              <a
+                href="./login.html"
+                class="font-semibold hover:text-purple-light border-b-2 transition-colors"
+                >Iniciar sesión</a
+              >
+              <img
+                src="/assets/images/login.png"
+                alt="Usuario"
+                class="h-12 w-12 rounded-full border-2 border-accent hover:border-white transition-all"
+              />
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Menú móvil (oculto por defecto) -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-purple-medium">
+        <ul class="px-4 py-2 space-y-4">
+          <li>
+            <a
+              href="#"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >RECETAS</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >CONTACTO</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >BUSCAR</a
+            >
+          </li>
+          <li class="flex items-center justify-between py-2">
+            <a
+              href="#"
+              class="font-semibold text-accent hover:text-white transition-colors"
+              >Iniciar sesión</a
+            >
+            <img
+              src="/assets/images/login.png"
+              alt="Usuario"
+              class="h-10 w-10 rounded-full border-2 border-accent hover:border-white transition-all"
+            />
+          </li>
+        </ul>
+      </div>
+    </header>
+<!-- Main - Solo Inicio de Sesión -->
+<main class="max-w-md mx-auto px-4 py-12">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold mb-6 text-center text-purple-dark">Inicia Sesión</h2>
+      
+      <form class="space-y-6">
+        <div>
+          <label for="login-email" class="block text-sm font-medium mb-1">Correo Electrónico</label>
+          <input 
+            type="email" 
+            id="login-email" 
+            required
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-medium"
+            placeholder="tucorreo@ejemplo.com"
+          >
+        </div>
+        
+        <div>
+          <label for="login-password" class="block text-sm font-medium mb-1">Contraseña</label>
+          <input 
+            type="password" 
+            id="login-password" 
+            required
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-medium"
+            placeholder="••••••••"
+          >
+        </div>
+        
+        <div class="flex items-center justify-between">
+          <label class="flex items-center">
+            <input type="checkbox" class="rounded text-purple-medium focus:ring-purple-medium">
+            <span class="ml-2 text-sm">Recordarme</span>
+          </label>
+          <a href="#" class="text-sm text-purple-medium hover:underline">¿Olvidaste tu contraseña?</a>
+        </div>
+        
+        <button type="submit" class="w-full bg-purple-medium text-white py-3 px-6 rounded-lg hover:bg-purple-dark transition-colors font-semibold">
+          Iniciar Sesión
+        </button>
+      </form>
+      
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">¿No tienes cuenta? <a href="./crear_cuenta.html" class="text-purple-medium hover:underline">Regístrate aquí</a></p>
+      </div>
+    </div>
+  </main>
+<footer class="py-10 bg-purple-medium text-white">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-8 items-center">
+          <!-- Logo -->
+          <div class="justify-self-center md:justify-self-start">
+            <img
+              src="/assets/images/logo.PNG"
+              alt="Logo"
+              class="h-16 md:h-20"
+            />
+          </div>
+
+          <!-- Texto centrado -->
+          <div class="text-center">
+            <h3 class="font-bold text-xl">Sabores del Mundo</h3>
+            <p class="text-purple-light">Sobre nosotros</p>
+          </div>
+
+          <!-- Redes sociales -->
+          
+<div class="justify-self-center md:justify-self-end flex space-x-6">
+    <a
+      href="https://www.facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/facebook.png"
+        alt="Facebook"
+        class="h-9 w-10 brightness-0 invert"
+      />
+    </a>
+    <a
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/instagram.png"
+        alt="Instagram"
+        class="h-8 w-12 brightness-0 invert"
+      />
+    </a>
+    <a
+      href="https://twitter.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/twitter.png"
+        alt="Twitter"
+        class="h-8 w-8 brightness-0 invert"
+      />
+    </a>
+  </div>
+  </div>
+  <!-- Derechos reservados -->
+  <div
+  class="mt-10 pt-6 border-t border-purple-light border-opacity-30 text-center text-purple-light"
+>
+  <p>© 2023 Recetas. Todos los derechos reservados.</p>
+</div>
+    </footer>

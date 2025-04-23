@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas - Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Añadir Font Awesome para las estrellas -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              light: '#E9D5FF',  // Morado clarito (fondo página)
+              medium: '#8B5CF6',  // Morado medio (header/footer)
+              dark: '#7C3AED'     // Morado más oscuro (hover)
+            },
+            accent: '#F59E0B',    // Naranja acento
+            text: '#1F2937'       // Texto oscuro
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-purple-light text-text min-h-screen">
+  <!-- Header morado medio -->
+  <header class="py-4 px-8 bg-purple-medium text-white shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="./inicio.html" class="hover:opacity-90 transition-opacity">
+        <img src="/assets/images/logo.PNG" alt="Logo" class="h-20 md:h-24">
+      </a>
+      
+      <nav>
+        <ul class="flex items-center space-x-8">
+          <li><a href="./inicio.html" class="font-semibold hover:text-purple-light transition-colors">INICIO</a></li>
+          <li><a href="./categorías_recetas.html" class="font-semibold hover:text-purple-light transition-colors">RECETAS</a></li>
+          <li><a href="./contacto.html" class="font-semibold hover:text-purple-light transition-colors">CONTACTO</a></li>
+          <li><a href="./buscar.html" class="font-semibold hover:text-purple-light transition-colors">BUSCAR</a></li>
+          <li class="flex items-center space-x-4">
+            <a href="./login.html" class="font-semibold text-accent hover:text-white transition-colors">Iniciar sesión</a>
+            <img src="/assets/images/login.png" alt="Usuario" class="h-12 w-12 rounded-full border-2 border-accent hover:border-white transition-all">
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="max-w-6xl mx-auto px-8 py-12">
+    <!-- Tarjeta de receta -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="md:flex">
+        <!-- Imagen de la receta (izquierda) -->
+        <div class="md:w-1/3">
+          <img src="/assets/images/chuleton.jpg" alt="Chuletón del bon" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Contenido de la receta (derecha) -->
+        <div class="md:w-2/3 p-8">
+          <h1 class="text-3xl font-bold mb-6 text-purple-medium">Chuletón del bon</h1>
+          
+          <div class="md:flex gap-8">
+            <!-- Sección Ingredientes -->
+            <div class="md:w-1/2 mb-8 md:mb-0">
+              <h2 class="text-2xl font-bold mb-4 border-b-2 border-accent pb-2">Ingredientes</h2>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>800g de chuletón de ternera</li>
+                <li>Sal gruesa al gusto</li>
+                <li>Pimienta negra recién molida</li>
+                <li>2 dientes de ajo</li>
+                <li>2 ramitas de romero</li>
+                <li>Aceite de oliva virgen extra</li>
+                <li>Mantequilla (opcional)</li>
+              </ul>
+            </div>
+            
+            <!-- Sección Elaboración -->
+            <div class="md:w-1/2">
+              <h2 class="text-2xl font-bold mb-4 border-b-2 border-accent pb-2">Elaboración</h2>
+              <ol class="list-decimal pl-5 space-y-3 text-gray-700">
+                <li>Saca la carne del frigorífico 1 hora antes para que tome temperatura ambiente.</li>
+                <li>Sazona generosamente con sal gruesa por ambos lados.</li>
+                <li>Calienta una plancha o sartén a fuego alto hasta que humee.</li>
+                <li>Coloca la carne y dórala 3-4 minutos por cada lado para un punto medio.</li>
+                <li>Añade los ajos y romero los últimos 2 minutos.</li>
+                <li>Retira y deja reposar 5 minutos antes de servir.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <!-- Valoración y tiempo -->
+          <div class="mt-8 flex flex-wrap items-center justify-between">
+            <div class="flex items-center mb-4 md:mb-0">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-600">(128 valoraciones)</span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+              <div class="flex items-center text-purple-medium">
+                <i class="far fa-clock text-xl mr-2"></i>
+                <span>30 min</span>
+              </div>
+              <div class="flex items-center text-purple-medium">
+                <i class="fas fa-utensils text-xl mr-2"></i>
+                <span>Media</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-purple-medium text-white">
+    <div class="max-w-6xl mx-auto px-8">
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-8 items-center">
+        <!-- Logo -->
+        <div class="justify-self-center md:justify-self-start">
+          <img src="/assets/images/logo.PNG" alt="Logo" class="h-16 md:h-20">
+        </div>
+        
+        <!-- Texto centrado -->
+        <div class="text-center">
+          <h3 class="font-bold text-xl">Sabores del Mundo</h3>
+          <p class="text-purple-light">Sobre nosotros</p>
+        </div>
+        
+        <!-- Redes sociales -->
+        <div class="justify-self-center md:justify-self-end flex space-x-6">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="/assets/images/facebook.png"
+              alt="Facebook"
+              class="h-9 w-10 brightness-0 invert"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="/assets/images/instagram.png"
+              alt="Instagram"
+              class="h-8 w-12 brightness-0 invert"
+            />
+          </a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            class="hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="/assets/images/twitter.png"
+              alt="Twitter"
+              class="h-8 w-8 brightness-0 invert"
+            />
+          </a>
+        </div>
+      </div>
+      <!-- Derechos reservados -->
+      <div
+      class="mt-10 pt-6 border-t border-purple-light border-opacity-30 text-center text-purple-light"
+    >
+      <p>© 2023 Recetas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

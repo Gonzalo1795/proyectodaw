@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabores del Mundo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Añadimos Font Awesome para los iconos de las estrellas -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!--Configuración de Tailwind-->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                light: "#E9D5FF", // Morado clarito (fondo página)
+                medium: "#8B5CF6", // Morado medio (header/footer)
+                dark: "#7C3AED", // Morado más oscuro (hover)
+              },
+              accent: "#F59E0B", // Naranja 
+              text: "#1F2937", // Texto oscuro
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Importamos la fuente Montserrat de Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+      /*Aplicamos Montserrat como fuente principal*/
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      /* Estilos para el menú móvil (despliegue)*/
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .mobile-menu.open {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <!--Fondo morado claro , texto oscuro y altura mínima de pantalla completa-->
+  <body class="bg-purple-light text-text min-h-screen">
+
+    <!--Padding vertical 4, horizontal 8, fondo morado, texto blanco y sombra-->
+    <header class="py-4 px-8 bg-purple-medium text-white shadow-lg">
+
+      <!--Contenedor con ancho máximo y alineación flexible-->
+      <div class="max-w-6xl mx-auto flex justify-between items-center"> 
+
+        <!--Logo-->
+        <a href="#" class="hover:opacity-90 transition-opacity">
+          <img src="/assets/images/logo.PNG" alt="Logo" class="h-20 md:h-24" />
+        </a>
+
+        <!-- Botón del menú hamburguesa (solo visible en móvil) -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none text-2xl">
+
+          <!--Icono de Font Awesome-->
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de navegación principal (oculto en móvil) -->
+        <nav class="hidden md:block">
+          <ul class="flex items-center space-x-8">
+
+            <!--Elementos de navegación con estilos hover-->
+            <li>
+                <a href="./inicio.html" 
+                class="font-semibold hover:text-purple-light border-b-2 transition-colors">INICIO</a></li>
+            <li>
+              <a
+                href="./categorías_recetas.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >RECETAS</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contacto.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >CONTACTO</a
+              >
+            </li>
+            <li>
+              <a
+                href="./buscar.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >BUSCAR</a
+              >
+            </li>
+            <li class="flex items-center space-x-4">
+              <a
+                href="./login.html"
+                class="font-semibold text-accent hover:text-white transition-colors"
+                >Iniciar sesión</a
+              >
+              <img
+                src="/assets/images/login.png"
+                alt="Usuario"
+                class="h-12 w-12 rounded-full border-2 border-accent hover:border-white transition-all"
+              />
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Menú móvil (oculto inicialmente) -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-purple-medium">
+        <ul class="px-4 py-2 space-y-4">
+          <li>
+            <a
+              href="#"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >RECETAS</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >CONTACTO</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >BUSCAR</a
+            >
+          </li>
+          <li class="flex items-center justify-between py-2">
+            <a
+              href="#"
+              class="font-semibold text-accent hover:text-white transition-colors"
+              >Iniciar sesión</a
+            >
+            <img
+              src="/assets/images/login.png"
+              alt="Usuario"
+              class="h-10 w-10 rounded-full border-2 border-accent hover:border-white transition-all"
+            />
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    
+    <main class="max-w-6xl mx-auto px-8 py-12">
+      <!-- Sección de recetas populares -->
+      <section class="mb-16">
+        <h2
+          class="text-3xl font-bold mb-10 text-purple-medium border-b-2 border-accent pb-2 inline-block"
+        >
+          RECETAS POPULARES
+        </h2>
+
+        <!--Grid de recetas-->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Tarjeta Receta 1 -->
+          <div
+            class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-white"
+          >
+
+          <!--Imagen con efecto hoover-->
+            <div class="h-48 overflow-hidden">
+              <a href="./recetas.html">
+                <img
+                  src="/assets/images/chuleton.jpg"
+                  alt="Chuletón del bon"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </a>
+            </div>
+
+            <!--Contenido de la tarjeta-->
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Chuletón del bon</h3>
+
+              <!-- Valoración con estrellas -->
+              <div class="flex items-center mb-3">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2"
+                  >(128 valoraciones)</span
+                >
+              </div>
+              <!--Enlace a la receta-->
+              <a
+                href="./recetas.html"
+                class="text-accent font-medium hover:text-purple-dark transition-colors inline-flex items-center"
+              >
+                Ver receta
+                <svg
+                  class="w-4 h-4 ml-1" 
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Receta 2 -->
+          <div
+            class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-white"
+          >
+            <div class="h-48 overflow-hidden">
+              <a href="./receta2.html">
+                <img
+                  src="/assets/images/patataes.jpg"
+                  alt="Patatas panadera"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </a>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Patatas panadera</h3>
+
+              <!-- Valoración con estrellas -->
+              <div class="flex items-center mb-3">
+                <div class="flex text-yellow-400">
+                  <!-- 5 estrellas (4 de valoración) -->
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2"
+                  >(87 valoraciones)</span
+                >
+              </div>
+
+              <a
+                href="./receta2.html"
+                class="text-accent font-medium hover:text-purple-dark transition-colors inline-flex items-center"
+              >
+                Ver receta
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Receta 3 -->
+          <div
+            class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-white"
+          >
+            <div class="h-48 overflow-hidden">
+              <a href="./receta3.html">
+                <img
+                  src="/assets/images/pollo.png"
+                  alt="Pollo con verduras"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </a>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Pollo con verduras</h3>
+
+              <!-- Valoración con estrellas -->
+              <div class="flex items-center mb-3">
+                <div class="flex text-yellow-400">
+                  <!-- 5 estrellas (5 de valoración) -->
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2"
+                  >(215 valoraciones)</span
+                >
+              </div>
+
+              <a
+                href="./receta3.html"
+                class="text-accent font-medium hover:text-purple-dark transition-colors inline-flex items-center"
+              >
+                Ver receta
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Separador con estilo-->
+      <hr class="my-12 border-t border-purple-medium opacity-30" />
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-purple-medium text-white">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-8 items-center">
+          <!-- Logo -->
+          <div class="justify-self-center md:justify-self-start">
+            <img
+              src="/assets/images/logo.PNG"
+              alt="Logo"
+              class="h-16 md:h-20"
+            />
+          </div>
+
+         <!--Información central-->
+          <div class="text-center">
+            <h3 class="font-bold text-xl">Sabores del Mundo</h3>
+            <p class="text-purple-light">Sobre nosotros</p>
+          </div>
+
+          <!-- Redes sociales -->
+          
+<div class="justify-self-center md:justify-self-end flex space-x-6">
+    <a
+      href="https://www.facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/facebook.png"
+        alt="Facebook"
+        class="h-9 w-10 brightness-0 invert"
+      />
+    </a>
+    <a
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/instagram.png"
+        alt="Instagram"
+        class="h-8 w-12 brightness-0 invert"
+      />
+    </a>
+    <a
+      href="https://twitter.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/twitter.png"
+        alt="Twitter"
+        class="h-8 w-8 brightness-0 invert"
+      />
+    </a>
+    
+    </a>
+  </div>
+  </div>
+  
+  <div
+  class="mt-10 pt-6 border-t border-purple-light border-opacity-30 text-center text-purple-light"
+>
+  <p>© 2023 Recetas. Todos los derechos reservados.</p>
+</div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('open');
+          
+          // Cambiar el icono de hamburguesa a X y viceversa
+          const icon = menuToggle.querySelector('i');
+          if (mobileMenu.classList.contains('open')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+        
+        // Cerrar el menú al hacer clic en un enlace
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

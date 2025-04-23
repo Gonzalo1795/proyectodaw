@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recetas - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Añadir Font Awesome para las estrellas -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                light: "#E9D5FF", // Morado clarito (fondo página)
+                medium: "#8B5CF6", // Morado medio (header/footer)
+                dark: "#7C3AED", // Morado más oscuro (hover)
+              },
+              accent: "#F59E0B", // Naranja acento
+              text: "#1F2937", // Texto oscuro
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-purple-light text-text min-h-screen">
+    <!-- Header morado medio -->
+    <header class="py-4 px-8 bg-purple-medium text-white shadow-lg">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="./inicio.html" class="hover:opacity-90 transition-opacity">
+          <img src="/assets/images/logo.PNG" alt="Logo" class="h-20 md:h-24" />
+        </a>
+
+        <nav>
+          <ul class="flex items-center space-x-8">
+            <li>
+              <a
+                href="./inicio.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >INICIO</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-semibold hover:text-purple-light border-b-2 transition-colors"
+                >RECETAS</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contacto.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >CONTACTO</a
+              >
+            </li>
+            <li>
+              <a
+                href="./buscar.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >BUSCAR</a
+              >
+            </li>
+            <li class="flex items-center space-x-4">
+              <a
+                href="./login.html"
+                class="font-semibold text-accent hover:text-white transition-colors"
+                >Iniciar sesión</a
+              >
+              <img
+                src="/assets/images/login.png"
+                alt="Usuario"
+                class="h-12 w-12 rounded-full border-2 border-accent hover:border-white transition-all"
+              />
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="max-w-6xl mx-auto py-12 px-8">
+      <h1 class="text-4xl font-bold text-center mb-12 text-purple-dark">
+        Categorías
+      </h1>
+
+      <!-- Categories grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Arroces -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/arroz.jpg"
+              alt="Arroces"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h2 class="text-xl font-semibold text-purple-dark">Arroces</h2>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cócteles Card -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/cocteles.jpg"
+              alt="Cócteles"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Cócteles</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carnes Card -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/chuleton.jpg"
+              alt="Carnes"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Carnes</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dulces Card -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/dulces.jpg"
+              alt="Dulces"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Dulces</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Ensalada -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/ensalada.png"
+              alt="Ensalada"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Ensalada</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Frutos secos -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/frutos secos.jpg"
+              alt="Frutos secos"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h2 class="text-xl font-semibold text-purple-dark">Frutos secos</h2>
+            </a>
+          </div>
+        </div>
+
+        <!-- Guarniciones -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/guarniciones.jpg"
+              alt="Guarniciones"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Guarniciones</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Huevos -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/huevos.png"
+              alt="Huevos"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Huevos</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cereales -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/cereales.png"
+              alt="Cereales"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Cereales</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mariscos -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/mariscos.png"
+              alt="Mariscos"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Mariscos</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Masas -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html"> 
+            <img
+              src="/assets/images/masas.jpg"
+              alt="Masas"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h2 class="text-xl font-semibold text-purple-dark">Masas</h2>
+            </a>
+          </div>
+        </div>
+
+        <!-- Panes -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/panes.png"
+              alt="Panes"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Panes</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pasta -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/pasta.png"
+              alt="Pasta"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Pasta</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Patatas -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/patataes.jpg"
+              alt="Patatas"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Patatas</h3>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pescado -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        >
+          <div class="h-40 bg-gray-200 overflow-hidden">
+            <a href="./receta2.html">
+            <img
+              src="/assets/images/pescado.png"
+              alt="Pescado"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            </a>
+          </div>
+          <div class="p-6">
+            <a href="./receta2.html">
+            <h3 class="text-xl font-semibold text-purple-dark">Pescado</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer  -->
+    <footer class="py-10 bg-purple-medium text-white">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-8 items-center">
+          <!-- Logo -->
+          <div class="justify-self-center md:justify-self-start">
+            <a href="./inicio.html">
+            <img
+              src="/assets/images/logo.PNG"
+              alt="Logo"
+              class="h-16 md:h-20"
+            />
+            </a>
+          </div>
+
+          
+          <div class="text-center">
+            <h3 class="font-bold text-xl">Sabores del Mundo</h3>
+            <p class="text-purple-light">Sobre nosotros</p>
+          </div>
+
+          <!-- Redes sociales -->
+          <!-- Redes sociales -->
+<div class="justify-self-center md:justify-self-end flex space-x-6">
+    <a
+      href="https://www.facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/facebook.png"
+        alt="Facebook"
+        class="h-9 w-10 brightness-0 invert"
+      />
+    </a>
+    <a
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/instagram.png"
+        alt="Instagram"
+        class="h-8 w-12 brightness-0 invert"
+      />
+    </a>
+    <a
+      href="https://twitter.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      class="hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="/assets/images/twitter.png"
+        alt="Twitter"
+        class="h-8 w-8 brightness-0 invert"
+      />
+    </a>
+  </div>
+        </div>
+        <!-- Derechos reservados -->
+        <div
+          class="mt-10 pt-6 border-t border-purple-light border-opacity-30 text-center text-purple-light"
+        >
+          <p>© 2023 Recetas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Sabores de Nando</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Añadir Font Awesome para las estrellas -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              purple: {
+                light: "#E9D5FF", // Morado clarito (fondo página)
+                medium: "#8B5CF6", // Morado medio (header/footer)
+                dark: "#7C3AED", // Morado más oscuro (hover)
+              },
+              accent: "#F59E0B", // Naranja acento
+              text: "#1F2937", // Texto oscuro
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      /* Estilos para el menú móvil */
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .mobile-menu.open {
+        max-height: 500px;
+      }
+      /* Estilos para el formulario de contacto */
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form select {
+        transition: all 0.3s ease;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus,
+      .contact-form select:focus {
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body class="bg-purple-light text-text min-h-screen">
+    <!-- Header morado medio -->
+    <header class="py-4 px-8 bg-purple-medium text-white shadow-lg">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="./inicio.html" class="hover:opacity-90 transition-opacity">
+          <img src="/assets/images/logo.PNG" alt="Logo" class="h-20 md:h-24" />
+        </a>
+
+        <!-- Botón del menú hamburguesa (solo visible en móvil) -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de navegación principal (oculto en móvil) -->
+        <nav class="hidden md:block">
+          <ul class="flex items-center space-x-8">
+            <li><a href="./inicio.html" class="font-semibold hover:text-purple-light transition-colors">INICIO</a></li>
+            <li>
+              <a
+                href="./categorías_recetas.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >RECETAS</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contacto.html"
+                class="font-semibold hover:text-purple-light transition-colors"
+                >CONTACTO</a
+              >
+            </li>
+            <li>
+              <a
+                href="./buscar.html"
+                class="font-semibold hover:text-purple-light border-b-2 transition-colors"
+                >BUSCAR</a
+              >
+            </li>
+            <li class="flex items-center space-x-4">
+              <a
+                href="./login.html"
+                class="font-semibold text-accent hover:text-white transition-colors"
+                >Iniciar sesión</a
+              >
+              <img
+                src="/assets/images/login.png"
+                alt="Usuario"
+                class="h-12 w-12 rounded-full border-2 border-accent hover:border-white transition-all"
+              />
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Menú móvil (oculto por defecto) -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-purple-medium">
+        <ul class="px-4 py-2 space-y-4">
+          <li>
+            <a
+              href="./inicio.html"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >INICIO</a
+            >
+          </li>
+          <li>
+            <a
+              href="./categorias.html"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >RECETAS</a
+            >
+          </li>
+          <li>
+            <a
+              href="./contacto.html"
+              class="block font-semibold hover:text-purple-light transition-colors py-2"
+              >CONTACTO</a
+            >
+          </li>
+          <li>
+            <a
+              href="./buscar.html"
+              class="block font-semibold text-accent hover:text-white transition-colors py-2"
+              >BUSCAR</a
+            >
+          </li>
+          <li class="flex items-center justify-between py-2">
+            <a
+              href="./login.html"
+              class="font-semibold text-accent hover:text-white transition-colors"
+              >Iniciar sesión</a
+            >
+            <img
+              src="/assets/images/login.png"
+              alt="Usuario"
+              class="h-10 w-10 rounded-full border-2 border-accent hover:border-white transition-all"
+            />
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Página de Búsqueda -->
+    <main class="max-w-7xl mx-auto px-4 py-8 md:px-8">
+      <!-- Barra de búsqueda principal -->
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold mb-6 text-purple-dark">Buscar Recetas</h1>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Busca por nombre, ingrediente, chef..."
+            class="w-full p-4 pl-12 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-purple-medium"
+          />
+          <i
+            class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+          ></i>
+          <button
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-medium text-white px-4 py-2 rounded-lg hover:bg-purple-dark transition-colors"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Panel de filtros -->
+        <aside class="w-full md:w-80 flex-shrink-0">
+          <div class="bg-white rounded-xl shadow-lg p-6 sticky top-4">
+            <h2 class="text-xl font-bold mb-6 text-purple-medium border-b pb-2">
+              Filtros Avanzados
+            </h2>
+
+            <!-- Filtro por categoría -->
+            <div class="mb-6 filter-section">
+              <button
+                class="filter-toggle flex justify-between items-center w-full font-semibold text-left mb-2"
+              >
+                <span>Categorías</span>
+                <i class="fas fa-chevron-down transition-transform"></i>
+              </button>
+              <div class="space-y-2 mt-2">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="rounded text-purple-medium focus:ring-purple-medium"
+                  />
+                  <span>Entrantes</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="rounded text-purple-medium focus:ring-purple-medium"
+                  />
+                  <span>Platos principales</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="rounded text-purple-medium focus:ring-purple-medium"
+                  />
+                  <span>Postres</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="rounded text-purple-medium focus:ring-purple-medium"
+                  />
+                  <span>Vegetarianas</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="rounded text-purple-medium focus:ring-purple-medium"
+                  />
+                  <span>Veganas</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Filtro por tiempo -->
+            <div class="mb-6 filter-section">
+              <button
+                class="filter-toggle flex justify-between items-center w-full font-semibold text-left mb-2"
+              >
+                <span>Tiempo de preparación</span>
+                <i class="fas fa-chevron-down transition-transform"></i>
+              </button>
+              <div class="mt-2">
+                <input
+                  type="range"
+                  min="0"
+                  max="120"
+                  value="60"
+                  class="w-full h-2 bg-purple-light rounded-lg appearance-none cursor-pointer"
+                />
+                <div class="flex justify-between text-sm text-gray-600 mt-2">
+                  <span>0 min</span>
+                  <span>60 min</span>
+                  <span>120+ min</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filtro por dificultad -->
+            <div class="mb-6 filter-section">
+              <button
+                class="filter-toggle flex justify-between items-center w-full font-semibold text-left mb-2"
+              >
+                <span>Dificultad</span>
+                <i class="fas fa-chevron-down transition-transform"></i>
+              </button>
+              <div class="grid grid-cols-3 gap-2 mt-2">
+                <input
+                  type="radio"
+                  id="dif-easy"
+                  name="difficulty"
+                  class="hidden peer"
+                  checked
+                />
+                <label
+                  for="dif-easy"
+                  class="peer-checked:bg-purple-medium peer-checked:text-white text-center py-2 rounded-lg bg-purple-light text-purple-medium cursor-pointer transition-colors"
+                >
+                  Fácil
+                </label>
+
+                <input
+                  type="radio"
+                  id="dif-medium"
+                  name="difficulty"
+                  class="hidden peer"
+                />
+                <label
+                  for="dif-medium"
+                  class="peer-checked:bg-purple-medium peer-checked:text-white text-center py-2 rounded-lg bg-purple-light text-purple-medium cursor-pointer transition-colors"
+                >
+                  Media
+                </label>
+
+                <input
+                  type="radio"
+                  id="dif-hard"
+                  name="difficulty"
+                  class="hidden peer"
+                />
+                <label
+                  for="dif-hard"
+                  class="peer-checked:bg-purple-medium peer-checked:text-white text-center py-2 rounded-lg bg-purple-light text-purple-medium cursor-pointer transition-colors"
+                >
+                  Difícil
+                </label>
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-accent text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors font-semibold mt-4"
+            >
+              Aplicar Filtros
+            </button>
+            <button
+              class="w-full text-purple-medium py-2 px-4 rounded-lg hover:bg-purple-light transition-colors font-medium mt-2"
+            >
+              Limpiar Filtros
+            </button>
+          </div>
+        </aside>
+
+        <!-- Resultados de búsqueda -->
+        <div class="flex-1">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-semibold">125 recetas encontradas</h2>
+            <div class="flex items-center space-x-2">
+              <span class="text-sm">Ordenar por:</span>
+              <select
+                class="rounded-lg border border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-purple-medium"
+              >
+                <option>Relevancia</option>
+                <option>Mejor valoradas</option>
+                <option>Más recientes</option>
+                <option>Tiempo (ascendente)</option>
+                <option>Tiempo (descendente)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Lista de recetas -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Receta 1 -->
+            <div
+              class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="/assets/images/pollo.png"
+                  alt="Pollo con verduras"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-1">Pollo con verduras</h3>
+                <div class="flex items-center text-sm text-gray-600 mb-2">
+                  <i class="fas fa-clock mr-1"></i>
+                  <span>25 min</span>
+                  <span class="mx-2">•</span>
+                  <span>Media</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">(128 valoraciones)</span>
+                </div>
+                <div class="flex flex-wrap gap-1 mb-3">
+                  <span
+                    class="bg-purple-light text-purple-medium text-xs px-2 py-1 rounded"
+                    >Pollo</span
+                  >
+                  <span
+                    class="bg-purple-light text-purple-medium text-xs px-2 py-1 rounded"
+                    >Healthy</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Receta 2 -->
+            <div
+              class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="/assets/images/chuleton.jpg"
+                  alt="Chuleton del bon"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-1">Chuletón del bon</h3>
+                <div class="flex items-center text-sm text-gray-600 mb-2">
+                  <i class="fas fa-clock mr-1"></i>
+                  <span>40 min</span>
+                  <span class="mx-2">•</span>
+                  <span>Fácil</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">(87 valoraciones)</span>
+                </div>
+                <div class="flex flex-wrap gap-1 mb-3">
+                  <span
+                    class="bg-purple-light text-purple-medium text-xs px-2 py-1 rounded"
+                    >Carne</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Receta 3 -->
+            <div
+              class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="/assets/images/dulces.jpg"
+                  alt="Tarta de chocolate"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-1">
+                  Croissant relleno de Chocolate
+                </h3>
+                <div class="flex items-center text-sm text-gray-600 mb-2">
+                  <i class="fas fa-clock mr-1"></i>
+                  <span>20 min</span>
+                  <span class="mx-2">•</span>
+                  <span>Fácil</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">(215 valoraciones)</span>
+                </div>
+                <div class="flex flex-wrap gap-1 mb-3">
+                  <span
+                    class="bg-purple-light text-purple-medium text-xs px-2 py-1 rounded"
+                    >Postre</span
+                  >
+                  <span
+                    class="bg-purple-light text-purple-medium text-xs px-2 py-1 rounded"
+                    >Chocolate</span
+                  >
+                  <span
+                    class="bg-purple-light text-purple-medium text-xs px-2 py-1 rounded"
+                    >Dulces</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paginación -->
+          <div class="flex justify-center mt-10">
+            <nav class="flex items-center space-x-2">
+              <button class="px-3 py-1 rounded-lg bg-purple-medium text-white">
+                1
+              </button>
+              <button class="px-3 py-1 rounded-lg hover:bg-purple-light">
+                2
+              </button>
+              <button class="px-3 py-1 rounded-lg hover:bg-purple-light">
+                3
+              </button>
+              <span class="px-2">...</span>
+              <button class="px-3 py-1 rounded-lg hover:bg-purple-light">
+                10
+              </button>
+              <button class="px-3 py-1 rounded-lg hover:bg-purple-light">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-purple-medium text-white">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-8 items-center">
+          <div class="justify-self-center md:justify-self-start">
+            <img
+              src="/assets/images/logo.PNG"
+              alt="Logo"
+              class="h-16 md:h-20"
+            />
+          </div>
+          <div class="text-center">
+            <h3 class="font-bold text-xl">Sabores del Mundo</h3>
+            <p class="text-purple-light">Sobre nosotros</p>
+          </div>
+          <div class="justify-self-center md:justify-self-end flex space-x-6">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="/assets/images/facebook.png"
+                alt="Facebook"
+                class="h-9 w-10 brightness-0 invert"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="/assets/images/instagram.png"
+                alt="Instagram"
+                class="h-8 w-12 brightness-0 invert"
+              />
+            </a>
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="/assets/images/twitter.png"
+                alt="Twitter"
+                class="h-8 w-8 brightness-0 invert"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          class="mt-10 pt-6 border-t border-purple-light border-opacity-30 text-center text-purple-light"
+        >
+          <p>© 2023 Sabores del Mundo. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Funcionalidad del menú hamburguesa
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("open");
+
+          const icon = menuToggle.querySelector("i");
+          if (mobileMenu.classList.contains("open")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Funcionalidad para los filtros
+        document.querySelectorAll(".filter-toggle").forEach((button) => {
+          button.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector("i");
+
+            content.classList.toggle("hidden");
+            icon.classList.toggle("fa-chevron-down");
+            icon.classList.toggle("fa-chevron-up");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
